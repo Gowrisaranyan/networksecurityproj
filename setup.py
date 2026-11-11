@@ -22,10 +22,10 @@ def get_requirements()->List[str]:
     return requirement_lst
 
 setup(
-     name = "Network_security"
-     version= 0.0.1
-     author = "Gowrisaran"
-     packages= find_packages()
+     name = "Network_security",
+     version= "0.0.1",
+     author = "Gowrisaran",
+     packages= find_packages(),
      install_requires = get_requirements()     
 )
 
