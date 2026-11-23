@@ -3,6 +3,8 @@ pandas
 numpy
 pymongo
 certifi
+ipykernel
+scikit-learn
 
 
 ##-e .
