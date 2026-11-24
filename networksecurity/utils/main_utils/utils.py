@@ -29,4 +29,28 @@ def write_yaml_file(file_path:str,content:dict,replace:bool =False):
         
     except Exception as e:
         raise NetworkSecurityException(e,sys)
-    
+
+
+def save_numpy_array(filepath:str,array:np.array)->None:
+    '''
+    filepath:string location of file to save
+    array: np.array data to save
+    '''
+    try:
+        dir = os.path.dirname(filepath)
+        os.makedirs(dir,exist_ok=True)
+        with open(filepath,'wb') as file_object:
+            np.save(file_object,array)
+    except Exception as e:
+        raise NetworkSecurityException(e,sys) 
+
+def save_object(filepath:str,obj:object)->None:
+    try:
+        logging.info("Entered the save object method")
+        dir = os.path.dirname(filepath)
+        os.makedirs(dir,exist_ok=True)
+        with open(filepath,"wb") as file_obj:
+            pickle.dump(obj,file_obj)
+        logging.info("Exited the save object method")
+    except Exception as e:
+        raise NetworkSecurityException(e,sys)
